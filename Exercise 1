@@ -1,1 +1,5 @@
+1. Connecting to Multiple Data Sources
 
+Exercise:  Connect Tableau to an Excel file and an SQL database. Blend the data to create a unified view.
+
+Objective:  Demonstrate how to blend sales data (Excel) with customer demographics (SQL).
