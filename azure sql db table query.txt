@@ -1,0 +1,58 @@
+CREATE TABLE Customer_Information (
+    CustomerID NVARCHAR(10) PRIMARY KEY,
+    CustomerName NVARCHAR(50) NOT NULL,
+    Region NVARCHAR(20) NOT NULL,
+    Segment NVARCHAR(20) NOT NULL
+);
+
+
+INSERT INTO Customer_Information (CustomerID, CustomerName, Region, Segment)
+VALUES
+    ('C001', 'Customer 1', 'North', 'Retail'),
+    ('C002', 'Customer 2', 'South', 'Corporate'),
+    ('C003', 'Customer 3', 'East', 'Retail'),
+    ('C004', 'Customer 4', 'West', 'Corporate'),
+    ('C005', 'Customer 5', 'North', 'Retail'),
+    ('C006', 'Customer 6', 'South', 'Retail'),
+    ('C007', 'Customer 7', 'East', 'Corporate'),
+    ('C008', 'Customer 8', 'West', 'Retail'),
+    ('C009', 'Customer 9', 'North', 'Corporate'),
+    ('C010', 'Customer 10', 'South', 'Retail'),
+    ('C011', 'Customer 11', 'East', 'Corporate'),
+    ('C012', 'Customer 12', 'West', 'Retail'),
+    ('C013', 'Customer 13', 'North', 'Corporate'),
+    ('C014', 'Customer 14', 'South', 'Retail'),
+    ('C015', 'Customer 15', 'East', 'Corporate'),
+    ('C016', 'Customer 16', 'West', 'Retail'),
+    ('C017', 'Customer 17', 'North', 'Retail'),
+    ('C018', 'Customer 18', 'South', 'Corporate'),
+    ('C019', 'Customer 19', 'East', 'Retail'),
+    ('C020', 'Customer 20', 'West', 'Corporate');
+
+UPDATE Customer_Information
+SET CustomerName = CASE CustomerID
+    WHEN 'C001' THEN 'Alice Johnson'
+    WHEN 'C002' THEN 'Bob Smith'
+    WHEN 'C003' THEN 'Catherine Lee'
+    WHEN 'C004' THEN 'David Brown'
+    WHEN 'C005' THEN 'Emily Davis'
+    WHEN 'C006' THEN 'Frank Wilson'
+    WHEN 'C007' THEN 'Grace Taylor'
+    WHEN 'C008' THEN 'Henry Moore'
+    WHEN 'C009' THEN 'Irene White'
+    WHEN 'C010' THEN 'Jack Thomas'
+    WHEN 'C011' THEN 'Karen Harris'
+    WHEN 'C012' THEN 'Leo Martin'
+    WHEN 'C013' THEN 'Mia Thompson'
+    WHEN 'C014' THEN 'Noah Garcia'
+    WHEN 'C015' THEN 'Olivia Martinez'
+    WHEN 'C016' THEN 'Paul Rodriguez'
+    WHEN 'C017' THEN 'Quincy Walker'
+    WHEN 'C018' THEN 'Rachel Young'
+    WHEN 'C019' THEN 'Steve Allen'
+    WHEN 'C020' THEN 'Tina Hernandez'
+END
+WHERE CustomerID IN ('C001', 'C002', 'C003', 'C004', 'C005', 
+                     'C006', 'C007', 'C008', 'C009', 'C010', 
+                     'C011', 'C012', 'C013', 'C014', 'C015', 
+                     'C016', 'C017', 'C018', 'C019', 'C020');
