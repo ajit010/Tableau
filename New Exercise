@@ -1,0 +1,124 @@
+Scenario Overview-
+You work for a company that tracks sales performance across regions. The data resides in:
+
+Excel File 1: Sales Transactions
+
+Contains details of individual transactions.
+Columns: Transaction ID, Date, Customer ID, Product ID, Quantity Sold, Sales Amount.
+
+Excel File 2: Product Information
+
+Contains product details.
+Columns: Product ID, Product Name, Category, Price.
+
+Azure SQL Server: Customer Information
+
+Contains customer demographics.
+Columns: Customer ID, Customer Name, Region, Segment.
+
+Your goal is to create a Tableau dashboard to analyze sales performance by person (Customer Name) and product (Product Name), with filtering options for Region, Product Category, and Date Range.
+
+Step 1: Connect Data Sources in Tableau
+
+> Connect Excel Files:
+
+Open Tableau Desktop.
+Click on Connect > Microsoft Excel.
+
+Load Excel File 1: Sales Transactions.
+
+Repeat for Excel File 2: Product Information.
+
+> Connect Azure SQL Server:
+
+Click on Connect > Microsoft SQL Server.
+Enter your server name, database name, username, and password to connect.
+Select the Customer Information table.
+
+
+Step 2: Create Relationships Between Datasets
+
+Join Excel Files:
+
+Drag Sales Transactions and Product Information to the canvas.
+Create a relationship (Join) between Product ID in both tables.
+
+Join Condition: Sales Transactions.Product ID = Product Information.Product ID.
+
+Relate SQL Server Data:
+
+Drag the Customer Information table to the canvas.
+
+Create a relationship (Join) between Customer ID in Sales Transactions and Customer ID in Customer Information.
+
+Join Condition: Sales Transactions.Customer ID = Customer Information.Customer ID.
+
+
+Step 3: Create Individual Sheets
+
+Sheet 1: Total Sales by Customer Name
+
+Drag Customer Name to Rows.
+Drag Sales Amount to Columns.
+Add a filter for Region from the Customer Information table.
+Sort customers by sales in descending order.
+Rename the sheet to Sales by Customer.
+
+
+Sheet 2: Sales by Product
+
+Drag Product Name to Rows.
+Drag Sales Amount to Columns.
+Add a filter for Category from the Product Information table.
+Add color coding by Category for better visualization.
+Rename the sheet to Sales by Product.
+
+
+Sheet 3: Sales Trend Over Time
+
+Drag Date to Columns.
+Drag Sales Amount to Rows.
+Add a filter for Region.
+Use a line chart to show trends.
+Rename the sheet to Sales Trend.
+
+
+Sheet 4: Sales Quantity by Product and Region
+
+
+Drag Product Name to Rows.
+Drag Quantity Sold to Columns.
+Add Region to Filters and Category to Color.
+Use a bar chart to show quantities.
+Rename the sheet to Sales Quantity.
+
+
+Step 4: Build the Dashboard
+
+Create Dashboard:
+
+Click on Dashboard > New Dashboard.
+Drag all four sheets into the dashboard.
+
+Arrange them in a grid format with Sales by Customer and Sales by Product on top, and Sales Trend and Sales Quantity below.
+
+>> Use as a filter option for all the sheets in Dashboard...
+
+Add Titles and Descriptions:
+
+Add meaningful titles and a short description for the dashboard.
+
+Customize for Better UX:
+
+Use tooltips to show additional details like Price, Segment, and Quantity Sold.
+
+
+Step 5: Test and Publish
+
+Test filtering by:
+
+> Selecting a specific customer.
+> Filtering by product category or date range.
+> Ensuring all sheets update correctly.
+
+Publish the dashboard to Tableau Server or Tableau Online for sharing.
